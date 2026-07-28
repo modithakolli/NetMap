@@ -1,0 +1,13 @@
+python-nmap
+networkx
+matplotlib
+requests
+jinja2
+pyvis
+flask
+
+# Optional -- only needed if you use the corresponding flag/env var.
+# Comment out if you don't want them:
+shodan          # for --shodan OSINT lookups (needs SHODAN_API_KEY)
+python-whois    # for WHOIS OSINT lookups
+pytest          # for running tests/

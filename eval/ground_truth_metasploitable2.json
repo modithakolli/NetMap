@@ -1,0 +1,46 @@
+{
+  "target": "Metasploitable2",
+  "source_note": "Metasploitable2 is Rapid7's intentionally-vulnerable practice VM, built specifically to have well-documented, publicly known vulnerabilities. This list is compiled from its widely-published vulnerability documentation (Rapid7's own Metasploitable2 exploitability guide and the broader pentesting community's write-ups on it) -- nothing here is a secret or a new finding, it's the standard reference list used to validate scanners against this VM.",
+  "known_vulnerabilities": [
+    {
+      "port": 21, "service": "ftp", "product_version": "vsftpd 2.3.4",
+      "expected_cve": "CVE-2011-2523",
+      "note": "The well-known vsftpd 2.3.4 backdoor (malicious code inserted into the source tarball briefly in 2011). Version-based, so this is the best-case scenario for CVE-keyword detection."
+    },
+    {
+      "port": 139, "service": "netbios-ssn", "product_version": "Samba smbd 3.0.20-Debian",
+      "expected_cve": "CVE-2007-2447",
+      "note": "The Samba 'usermap_script' command injection. Version-based, should be keyword-detectable."
+    },
+    {
+      "port": 445, "service": "microsoft-ds", "product_version": "Samba smbd 3.0.20-Debian",
+      "expected_cve": "CVE-2007-2447",
+      "note": "Same underlying Samba vulnerability, reachable on both 139 and 445."
+    },
+    {
+      "port": 3632, "service": "distccd", "product_version": "distccd v1",
+      "expected_cve": "CVE-2004-2687",
+      "note": "distcc daemon allows arbitrary command execution when exposed without access control. Version-based."
+    },
+    {
+      "port": 6667, "service": "irc", "product_version": "UnrealIRCd 3.2.8.1",
+      "expected_cve": null,
+      "note": "This is a supply-chain backdoor (a trojaned source tarball distributed for a period in 2009), not a version-based code vulnerability with a CVE tied to the banner version. A keyword/CPE scanner has no way to distinguish a backdoored 3.2.8.1 build from a clean one -- this is an intentional test case for a *structural* false negative, not a scanner bug."
+    },
+    {
+      "port": 1099, "service": "java-rmi", "product_version": "Java RMI Registry",
+      "expected_cve": null,
+      "note": "'Vulnerable' here means an insecure default configuration (unauthenticated RMI registry allowing remote class loading), not a version-specific code flaw. No CVE to detect against -- another structural false negative by design."
+    },
+    {
+      "port": 8180, "service": "http", "product_version": "Apache Tomcat/Coyote",
+      "expected_cve": null,
+      "note": "Vulnerable via default/weak admin credentials on the Tomcat Manager app, not a code CVE. A credential-based finding, not something CVE-keyword lookup can ever catch."
+    },
+    {
+      "port": 5900, "service": "vnc", "product_version": "VNC (RealVNC/TigerVNC variant)",
+      "expected_cve": null,
+      "note": "Vulnerable via a trivially weak configured password, not a version CVE. Same structural-false-negative category as above."
+    }
+  ]
+}

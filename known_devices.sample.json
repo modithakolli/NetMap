@@ -1,0 +1,6 @@
+{
+  "192.168.1.1": {"label": "router", "mac": "F0:27:2D:AA:BB:CC"},
+  "192.168.1.10": {"label": "file server", "mac": "00:15:17:11:22:33"},
+  "192.168.1.25": {"label": "legacy ftp box", "mac": "AA:BB:CC:DD:EE:FF"},
+  "192.168.1.40": {"label": "web/db server", "mac": "B8:27:EB:12:34:56"}
+}

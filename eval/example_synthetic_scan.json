@@ -1,0 +1,43 @@
+{
+  "_disclaimer": "SYNTHETIC TEST FIXTURE -- this was NOT produced by scanning a real Metasploitable2 instance. It's hand-constructed to exercise evaluate.py's logic (including some deliberate misses and a false-positive-looking flag) so the harness itself can be verified before you run it against your own real VM. Do not cite these numbers as real results.",
+  "timestamp": "2026-07-27T00:00:00+00:00",
+  "range": "192.168.56.101/32",
+  "hosts": {
+    "192.168.56.101": {
+      "services": {
+        "21": {
+          "name": "ftp", "product": "vsftpd", "version": "2.3.4",
+          "cves": [{"id": "CVE-2011-2523", "score": 9.8, "severity": "CRITICAL"}]
+        },
+        "139": {
+          "name": "netbios-ssn", "product": "Samba smbd", "version": "3.0.20-Debian",
+          "cves": []
+        },
+        "445": {
+          "name": "microsoft-ds", "product": "Samba smbd", "version": "3.0.20-Debian",
+          "cves": [{"id": "CVE-2007-2447", "score": 10.0, "severity": "CRITICAL"}]
+        },
+        "3632": {
+          "name": "distccd", "product": "distccd", "version": "v1",
+          "cves": []
+        },
+        "6667": {
+          "name": "irc", "product": "UnrealIRCd", "version": "3.2.8.1",
+          "cves": []
+        },
+        "1099": {
+          "name": "java-rmi", "product": "", "version": "",
+          "cves": []
+        },
+        "8180": {
+          "name": "http", "product": "Apache Tomcat/Coyote JSP engine", "version": "1.1",
+          "cves": [{"id": "CVE-2099-00001", "score": 5.0, "severity": "MEDIUM"}]
+        },
+        "5900": {
+          "name": "vnc", "product": "", "version": "",
+          "cves": []
+        }
+      }
+    }
+  }
+}
