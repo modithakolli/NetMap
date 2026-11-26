@@ -3,6 +3,7 @@
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 ![Tests: pytest](https://img.shields.io/badge/tests-pytest-blue)
+[![CI](https://github.com/modithakolli/NetMap/actions/workflows/tests.yml/badge.svg)](https://github.com/modithakolli/NetMap/actions/workflows/tests.yml)
 ![Status: research/education tool](https://img.shields.io/badge/status-research%2Feducation-orange)
 
 A Python tool that scans a network, discovers active hosts and their
@@ -268,6 +269,17 @@ cases), the Flask dashboard's routes/auth, and the evaluation harness
 itself — all mocked at the network boundary, so no live network is
 needed to run them. CI runs this on every push
 (`.github/workflows/tests.yml`).
+
+## Continuous integration and security checks
+
+Every push and pull request runs three GitHub Actions jobs
+([`tests.yml`](.github/workflows/tests.yml)):
+
+- **tests** - the pytest suite (network calls are mocked)
+- **security-scans** - bandit (static analysis, medium severity and above),
+  pip-audit (known vulnerabilities in `requirements.txt`) and gitleaks
+  (secrets detection)
+- **docker-build** - builds the image from the `Dockerfile`
 
 ## Docker
 
